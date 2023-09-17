@@ -1,0 +1,47 @@
+/* Styles personnalisés pour le message de bienvenue */
+.welcome-message {
+    font-size: 50px;
+    font-weight: bold;
+    color: #1952b4; /* Couleur bleu foncé */
+    /* Ajoutez d'autres styles personnalisés ici */
+    /* Par exemple, pour ajouter une marge supérieure : */
+
+	margin-left: 10%;}
+
+/* Style de la div contenant le formulaire de déconnexion */
+.header {
+    display: flex;
+    margin-top: 5%;
+	    justify-content: space-between;
+		 padding-right:20%;
+}
+
+/* Style du bouton Déconnexion */
+.header button {
+	margin-top: 15%;
+
+    padding: 10px 20px;
+    background-color:  #1952b4; /* Couleur rouge pour le bouton Déconnexion */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.header button:hover {
+    background-color:  #2264d7; /* Couleur rouge légèrement plus foncée au survol */
+}
+
+
+
+	/* Styles personnalisés pour le calendrier */
+#calendar {
+
+    border: 1px solid #ccc; /* Bordure grise de 1 pixel */
+    padding: 30px; /* Espace intérieur de 20 pixels pour le contenu du calendrier */
+}
+/* Styles personnalisés pour les cases de la grille du calendrier */
+.fc-daygrid-day {
+    border: 1px solid #ccc; /* Bordure grise de 1 pixel */
+}
