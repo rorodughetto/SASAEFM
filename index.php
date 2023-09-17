@@ -3,22 +3,38 @@
 //Nous allons démarrer la session avant toute chose
 if (isset($con)) {
 	session_start();
-	if (isset($_POST['boutton-valider'])) { // Si on clique sur le boutton , alors :
-		//Nous allons verifiér les informations du formulaire
-		if (isset($_POST['user']) && isset($_POST['password'])) { //On verifie ici si l'utilisateur a rentré des informations
-			//Nous allons mettres l'email et le mot de passe dans des variables
+	if (isset($_POST['boutton-valider'])) { // Si on clique sur le bouton, alors :
+		// Nous allons vérifier les informations du formulaire
+		if (isset($_POST['user']) && isset($_POST['password'])) { // On vérifie ici si l'utilisateur a rentré des informations
+			// Nous allons mettre l'email et le mot de passe dans des variables
 			$user = $_POST['user'];
 			$password = $_POST['password'];
 			$erreur = "";
-			//requete pour selectionner  l'utilisateur qui a pour email et mot de passe les identifiants qui ont été entrées
-			$req = mysqli_query($con, "SELECT * FROM users WHERE user = '$user' AND password ='$password' ");
-			$num_ligne = mysqli_num_rows($req); //Compter le nombre de ligne ayant rapport a la requette SQL
-			if ($num_ligne > 0) {
-				header("Location:calendar.php"); //Si le nombre de ligne est > 0 , on sera redirigé vers la page bienvenu
-				// Nous allons créer une variable de type session qui vas contenir l'email de l'utilisateur
-				$_SESSION['utilisateur'] = $user;
-			} else { //si non
-				$erreur = "Utilisateur ou Mots de passe incorrectes !";
+
+			// Requête pour sélectionner l'utilisateur par son nom d'utilisateur
+			$req = mysqli_query($con, "SELECT * FROM users WHERE user = '$user'");
+
+			if ($req) {
+				$num_ligne = mysqli_num_rows($req); // Compter le nombre de lignes ayant rapport à la requête SQL
+
+				if ($num_ligne > 0) {
+					// Utilisateur trouvé, maintenant vérifions le mot de passe
+					$row = mysqli_fetch_assoc($req);
+					$hashed_password = $row['password']; // Récupérer le mot de passe haché depuis la base de données
+
+					if (password_verify($password, $hashed_password)) {
+						// Le mot de passe correspond, nous pouvons rediriger l'utilisateur
+						header("Location:calendar.php");
+						// Nous allons créer une variable de type session qui va contenir le nom d'utilisateur de l'utilisateur
+						$_SESSION['utilisateur'] = $user;
+					} else {
+						$erreur = "Utilisateur ou mot de passe incorrect !";
+					}
+				} else {
+					$erreur = "Utilisateur ou mot de passe incorrect !";
+				}
+			} else {
+				$erreur = "Erreur lors de la requête SQL.";
 			}
 		}
 	}

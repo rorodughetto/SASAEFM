@@ -1,37 +1,50 @@
-/* Styles personnalisés pour le message de bienvenue */
-.welcome-message {
-    font-size: 50px;
-    font-weight: bold;
-    color: #1952b4; /* Couleur bleu foncé */
-    /* Ajoutez d'autres styles personnalisés ici */
-    /* Par exemple, pour ajouter une marge supérieure : */
-
-	margin-left: 10%;}
-
-/* Style de la div contenant le formulaire de déconnexion */
-.header {
-    display: flex;
-    margin-top: 5%;
-	    justify-content: space-between;
-		 padding-right:20%;
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Style du bouton Déconnexion */
-.header button {
-	margin-top: 15%;
+/* Styles personnalisés pour la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Couleur de fond grise */
+}
 
-    padding: 10px 20px;
-    background-color:  #1952b4; /* Couleur rouge pour le bouton Déconnexion */
-    color: #ffffff;
+/* Styles pour le message de bienvenue */
+.welcome-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1952b4; /* Couleur bleu foncé */
+    margin-left: 10px;
+}
+
+/* Styles pour l'en-tête */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centrez verticalement le contenu */
+    padding: 10px 20px; /* Espacement autour du contenu */
+    background-color: #fff; /* Couleur de fond blanche */
+    border-bottom: 1px solid #ccc; /* Bordure inférieure grise */
+}
+
+/* Styles pour le bouton de déconnexion */
+.header button {
+    padding: 8px 16px;
+    background-color: #333; /* Couleur de fond sombre */
+    color: #fff; /* Couleur de texte claire */
     border: none;
-    border-radius: 5px; /* Coins arrondis */
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
+    transition: background-color 0.3s; /* Transition en douceur au survol */
 }
 
 .header button:hover {
-    background-color:  #2264d7; /* Couleur rouge légèrement plus foncée au survol */
+    background-color: #555; /* Couleur légèrement plus foncée au survol */
 }
+
 
 
 

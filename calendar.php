@@ -4,7 +4,6 @@ include("./bdd/bdd-selectable.php");
 //On demare la session sur sur cette page
 session_start();
 // Définissez le temps d'expiration de la session (par exemple, 5 minutes).
-
 // Vérifier si l'utilisateur est connecté.
 if (!isset($_SESSION['utilisateur'])) {
 	// Si la session n'est pas définie, rediriger vers une page d'erreur.
@@ -36,12 +35,27 @@ if (!isset($_SESSION['utilisateur'])) {
 <body class="bg-light">
 	<!-- Modifiez cette ligne pour ajouter la classe CSS personnalisée -->
 	<div class="header">
-		<p class='message welcome-message'> Bonjour <?php echo $_SESSION['utilisateur']; ?></p>
+		<p class="message welcome-message">Bonjour <?php echo $_SESSION['utilisateur']; ?></p>
+		<?php
+		$user = $_SESSION['utilisateur'];
+		// Vérifiez la valeur de "super" pour décider d'afficher ou non le bouton d'administration utilisateur.
+		$sqlSuper = "SELECT `super` FROM `users` WHERE `user` = '$user'";
 
+		$resultSuper = $con->query($sqlSuper);
+		$rowSuper = $resultSuper->fetch_assoc();
+
+		if ($rowSuper['super'] == 0) {
+			// Afficher le bouton d'administration utilisateur avec la classe de style
+			echo '<form action="administration.php" method="post">
+			<button type="submit" class="button">Administration</button>
+		</form>';
+		}
+		?>
 		<form action="deconnexion.php" method="post">
-			<button type="submit">Déconnexion</button>
+			<button type="submit" class="logout-button">Déconnexion</button>
 		</form>
 	</div>
+
 
 	<div class="container py-5" id="page-container">
 		<div class="row">
@@ -60,12 +74,14 @@ if (!isset($_SESSION['utilisateur'])) {
 								<div class="form-group mb-2">
 									<label for="room_name" class="control-label">Salle</label>
 									<select class="form-control form-control-sm rounded-0" name="room_name" id="room_name" required>
+										<option value="">--Sélectionner une salle--</option>
 										<?php foreach ($salles as $salle) { ?>
 											<option value="<?php echo $salle['room_name']; ?>">
 												<?php echo $salle['room_name']; ?>
 											</option>
 										<?php } ?>
 									</select>
+
 								</div>
 								<div class="form-group mb-2">
 									<label for="deceased_name" class="control-label">Nom du défunt</label>

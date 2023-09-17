@@ -11,10 +11,12 @@ $(function () {
             var row = scheds[k];
             events.push({
                 id: row.id,
-                title: row.room_name, // Utilisez "room_name" comme "title"
+                title: row.room_name + " : " + row.author + " pour " + row.deceased_name, // Utilisez "room_name" comme "title"
                 start: row.start_datetime,
                 end: row.end_datetime,
-                backgroundColor: eventColors[index % eventColors.length] // Sélectionne une couleur de la liste
+                backgroundColor: eventColors[index % eventColors.length], // Sélectionne une couleur de la liste
+
+
             });
         });
 
