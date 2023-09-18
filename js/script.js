@@ -15,11 +15,8 @@ $(function () {
                 start: row.start_datetime,
                 end: row.end_datetime,
                 backgroundColor: eventColors[index % eventColors.length], // Sélectionne une couleur de la liste
-
-
             });
         });
-
     }
     var date = new Date();
     var d = date.getDate(),
@@ -44,6 +41,11 @@ $(function () {
                 _details.find('#room_name').text(scheds[id].room_name);
                 _details.find('#start_datetime').text(scheds[id].start_datetime);
                 _details.find('#end_datetime').text(scheds[id].end_datetime);
+                _details.find('#toilet_and_dressing').text(scheds[id].toilet_and_dressing); // Ajoutez ces lignes
+                _details.find('#care').text(scheds[id].care);
+                _details.find('#ritual_toilet').text(scheds[id].ritual_toilet);
+                _details.find('#technical_room_reservation').text(scheds[id].technical_room_reservation);
+                _details.find('#technical_room_reservation_time').text(scheds[id].technical_room_reservation_time);
                 _details.find('#edit,#delete').attr('data-id', id);
                 _details.modal('show');
             } else {

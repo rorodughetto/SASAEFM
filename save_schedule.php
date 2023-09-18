@@ -39,7 +39,7 @@ if (empty($id)) {
     }
 
     $author = $_SESSION['utilisateur'];
-    $sql = "INSERT INTO `schedule_list` (`author`, `deceased_name`, `room_name`, `start_datetime`, `end_datetime`) VALUES ('$author', '$deceased_name', '$room_name', '$start_datetime', '$end_datetime')";
+    $sql = "INSERT INTO `schedule_list` (`author`, `deceased_name`, `room_name`, `start_datetime`, `end_datetime`, `toilet_and_dressing`, `care`, `ritual_toilet`, `technical_room_reservation`, `technical_room_reservation_time`) VALUES ('$author', '$deceased_name', '$room_name', '$start_datetime', '$end_datetime', '$toilet_and_dressing', '$care', '$ritual_toilet', '$technical_room_reservation_choice', '$technical_room_reservation_time')";
 } else {
     // Sinon, il s'agit d'une mise à jour
 
