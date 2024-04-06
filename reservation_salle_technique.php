@@ -72,7 +72,7 @@ $currentDate = date('Y-m-d\TH:i', strtotime('now'));
 									<label for="start_datetime" class="control-label">Début</label>
 									<input type="datetime-local" class="form-control form-control-sm rounded-0"
 										value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour')); ?>"
-										name="start_datetime" id="start_datetime" min="<?php echo $currentDate ?> "
+										name="start_datetime" id="start_datetime"
 										required>
 								</div>
 

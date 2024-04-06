@@ -95,7 +95,7 @@ datetimeInput.addEventListener("change", function() {
 										<input type="datetime-local" class="form-control form-control-sm rounded-0"
 											name="start_datetime" id="start_datetime"
 											value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour ')); ?>"
-											min="<?php echo $currentDate ?>">
+											>
 									</div>
 
 									<div class="form-group mb-2">
@@ -103,7 +103,7 @@ datetimeInput.addEventListener("change", function() {
 										<input type="datetime-local" class="form-control form-control-sm rounded-0"
 											name="end_datetime" id="end_datetime"
 											value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour +1 day')); ?>"
-											min=<?php echo $currentDate ?>>
+											>
 									</div>
 								</form>
 							</div>
