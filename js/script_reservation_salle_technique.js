@@ -36,11 +36,34 @@ $(function () {
         eventClick: function (info) {
             var _details = $('#event-details-modal');
             var id = info.event.id;
+
+
+            var startDatetime = scheds[id].start_time;
+            var endDatetime = scheds[id].end_time;
+      
+            // Convertissez les valeurs de date et d'heure au format jour
+            var startDate = new Date(startDatetime);
+            var endDate = new Date(endDatetime);
+      
+            // Obtenez la date au format jour (format AAAA-MM-JJ)
+            var startDateString =
+              startDate.toISOString().split("T")[0] +
+              " " +
+              ("0" + startDate.getHours()).slice(-2) +
+              ":" +
+              ("0" + startDate.getMinutes()).slice(-2);
+            var endDateString =
+              endDate.toISOString().split("T")[0] +
+              " " +
+              ("0" + endDate.getHours()).slice(-2) +
+              ":" +
+              ("0" + endDate.getMinutes()).slice(-2);
+
             if (!!scheds[id]) {
                 _details.find('#author').text(scheds[id].author);
                 _details.find('#deceased_name').text(scheds[id].deceased_name);
-                _details.find('#start_time').text(scheds[id].start_time);
-                _details.find('#end_time').text(scheds[id].end_time);
+                _details.find('#start_time').text(startDateString);
+                _details.find('#end_time').text(endDateString);
                  _details.find('#tecnical_option').text(scheds[id].tecnical_option);
                 _details.find('#edit,#delete').attr('data-id', id);
                 _details.modal('show');

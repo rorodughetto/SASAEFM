@@ -24,8 +24,7 @@ $currentDate = date('Y-m-d\TH:i', strtotime('now'));
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Page de réservation</title>
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 	<link rel="stylesheet" type="text/css" href="./css/reservation_salle_technique.css">
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./fullcalendar/lib/main.min.css">
@@ -64,30 +63,24 @@ $currentDate = date('Y-m-d\TH:i', strtotime('now'));
 								<input type="hidden" name="id" value="">
 								<div class="form-group mb-2">
 									<label for="deceased_name" class="control-label">Nom du défunt</label>
-									<input type="text" class="form-control form-control-sm rounded-0"
-										name="deceased_name" id="deceased_name" required>
+									<input type="text" class="form-control form-control-sm rounded-0" name="deceased_name" id="deceased_name" required>
 								</div>
 
 								<div class="form-group mb-2">
 									<label for="start_datetime" class="control-label">Début</label>
-									<input type="datetime-local" class="form-control form-control-sm rounded-0"
-										value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour')); ?>"
-										name="start_datetime" id="start_datetime"
-										required>
+									<input type="datetime-local" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour')); ?>" name="start_datetime" id="start_datetime" required>
 								</div>
 
 								<div class="form-group mb-2">
 									<label for="option" class="control-label">Option</label>
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="option"
-											id="option_soin_habillage" value="Soin et habillage" required checked>
+										<input class="form-check-input" type="radio" name="option" id="option_soin_habillage" value="Soin et habillage" required checked>
 										<label class="form-check-label" for="option_soin_habillage">
 											Soin et habillage
 										</label>
 									</div>
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="option"
-											id="option_rite_musulman" value="Toilette rituelle" required>
+										<input class="form-check-input" type="radio" name="option" id="option_rite_musulman" value="Toilette rituelle" required>
 										<label class="form-check-label" for="option_rite_musulman">
 											Toilette rituelle
 										</label>
@@ -101,10 +94,8 @@ $currentDate = date('Y-m-d\TH:i', strtotime('now'));
 					</div>
 					<div class="card-footer">
 						<div class="text-center">
-							<button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i
-									class="fa fa-save"></i>Enregistrer</button>
-							<button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i
-									class="fa fa-reset"></i>Annuler</button>
+							<button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i>Enregistrer</button>
+							<button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i>Annuler</button>
 						</div>
 					</div>
 
@@ -142,10 +133,8 @@ $currentDate = date('Y-m-d\TH:i', strtotime('now'));
 				<div class="modal-footer rounded-0">
 					<div class="text-end">
 
-						<button type="button" class="btn btn-danger btn-sm rounded-0" id="delete"
-							data-id="">Supprimer</button>
-						<button type="button" class="btn btn-secondary btn-sm rounded-0"
-							data-bs-dismiss="modal">Fermer</button>
+						<button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">Supprimer</button>
+						<button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Fermer</button>
 					</div>
 				</div>
 			</div>
@@ -168,7 +157,7 @@ $currentDate = date('Y-m-d\TH:i', strtotime('now'));
 	?>
 </body>
 <script>
-var scheds = $.parseJSON('<?= json_encode($sched_res) ?>')
+	var scheds = $.parseJSON('<?= json_encode($sched_res) ?>')
 </script>
 
 

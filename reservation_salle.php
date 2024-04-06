@@ -23,8 +23,7 @@ $currentDate = date('Y-m-d\TH:i', strtotime('now'));
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Page de réservation</title>
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 	<link rel="stylesheet" type="text/css" href="./css/reservation_salle.css">
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./fullcalendar/lib/main.min.css">
@@ -34,14 +33,14 @@ $currentDate = date('Y-m-d\TH:i', strtotime('now'));
 
 </head>
 <script>
-var datetimeInput = document.getElementById("start_datetime");
+	var datetimeInput = document.getElementById("start_datetime");
 
-datetimeInput.addEventListener("change", function() {
-	var datetimeValue = datetimeInput.value;
-	var formattedDate = datetimeValue.substring(0,
-		16); // Garde uniquement les 16 premiers caractères (année-mois-jour-heure)
-	datetimeInput.value = formattedDate;
-});
+	datetimeInput.addEventListener("change", function() {
+		var datetimeValue = datetimeInput.value;
+		var formattedDate = datetimeValue.substring(0,
+			16); // Garde uniquement les 16 premiers caractères (année-mois-jour-heure)
+		datetimeInput.value = formattedDate;
+	});
 </script>
 
 <body class="bg-light">
@@ -74,46 +73,36 @@ datetimeInput.addEventListener("change", function() {
 									<input type="hidden" name="id" value="">
 									<div class="form-group mb-2">
 										<label for="room_name" class="control-label">Cellule</label>
-										<select class="form-control form-control-sm rounded-0" name="room_name"
-											id="room_name" required>
+										<select class="form-control form-control-sm rounded-0" name="room_name" id="room_name" required>
 											<option value="">--Sélectionner une cellule--</option>
 											<?php foreach ($cellule as $c) { ?>
-											<option value="<?php echo $c['cellule_name']; ?>">
-												<?php echo $c['cellule_name']; ?>
-											</option>
+												<option value="<?php echo $c['cellule_name']; ?>">
+													<?php echo $c['cellule_name']; ?>
+												</option>
 											<?php } ?>
 										</select>
 									</div>
 									<div class="form-group mb-2">
 										<label for="deceased_name" class="control-label">Nom du défunt</label>
-										<input type="text" class="form-control form-control-sm rounded-0"
-											name="deceased_name" id="deceased_name" required>
+										<input type="text" class="form-control form-control-sm rounded-0" name="deceased_name" id="deceased_name" required>
 									</div>
 
 									<div class="form-group mb-2">
 										<label for="start_datetime" class="control-label">Début</label>
-										<input type="datetime-local" class="form-control form-control-sm rounded-0"
-											name="start_datetime" id="start_datetime"
-											value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour ')); ?>"
-											>
+										<input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour ')); ?>">
 									</div>
 
 									<div class="form-group mb-2">
 										<label for="end_datetime" class="control-label">Fin</label>
-										<input type="datetime-local" class="form-control form-control-sm rounded-0"
-											name="end_datetime" id="end_datetime"
-											value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour +1 day')); ?>"
-											>
+										<input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour +1 day')); ?>">
 									</div>
 								</form>
 							</div>
 						</div>
 						<div class="card-footer">
 							<div class="text-center">
-								<button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form-2"><i
-										class="fa fa-save"></i> Enregistrer</button>
-								<button class="btn btn-default border btn-sm rounded-0" type="reset"
-									form="schedule-form-2"><i class="fa fa-reset"></i>Annuler</button>
+								<button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form-2"><i class="fa fa-save"></i> Enregistrer</button>
+								<button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form-2"><i class="fa fa-reset"></i>Annuler</button>
 							</div>
 						</div>
 					</div>
@@ -131,36 +120,28 @@ datetimeInput.addEventListener("change", function() {
 									<input type="hidden" name="id" value="">
 									<div class="form-group mb-2">
 										<label for="room_name" class="control-label">Salon</label>
-										<select class="form-control form-control-sm rounded-0" name="room_name"
-											id="room_name" required>
+										<select class="form-control form-control-sm rounded-0" name="room_name" id="room_name" required>
 											<option value="">--Sélectionner un salon--</option>
 											<?php foreach ($salon as $s) { ?>
-											<option value="<?php echo $s['salon_name']; ?>">
-												<?php echo $s['salon_name']; ?>
-											</option>
+												<option value="<?php echo $s['salon_name']; ?>">
+													<?php echo $s['salon_name']; ?>
+												</option>
 											<?php } ?>
 										</select>
 									</div>
 									<div class="form-group mb-2">
 										<label for="deceased_name" class="control-label">Nom du défunt</label>
-										<input type="text" class="form-control form-control-sm rounded-0"
-											name="deceased_name" id="deceased_name" required>
+										<input type="text" class="form-control form-control-sm rounded-0" name="deceased_name" id="deceased_name" required>
 									</div>
 
 									<div class="form-group mb-2">
 										<label for="start_datetime" class="control-label">Début</label>
-										<input type="datetime-local" class="form-control form-control-sm rounded-0"
-											name="start_datetime" id="start_datetime"
-											value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour')); ?>"
-											>
+										<input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour')); ?>">
 									</div>
 
 									<div class="form-group mb-2">
 										<label for="end_datetime" class="control-label">Fin</label>
-										<input type="datetime-local" class="form-control form-control-sm rounded-0"
-											name="end_datetime" id="end_datetime"
-											value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour  +1 day ')); ?>"
-											>
+										<input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" value="<?php echo date('Y-m-d\TH:00', strtotime('+2 hour  +1 day ')); ?>">
 									</div>
 								</form>
 							</div>
@@ -169,10 +150,8 @@ datetimeInput.addEventListener("change", function() {
 
 						<div class="card-footer">
 							<div class="text-center">
-								<button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i
-										class="fa fa-save"></i> Enregistrer</button>
-								<button class="btn btn-default border btn-sm rounded-0" type="reset"
-									form="schedule-form"><i class="fa fa-reset"></i>Annuler</button>
+								<button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Enregistrer</button>
+								<button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i>Annuler</button>
 							</div>
 						</div>
 					</div>
@@ -208,10 +187,8 @@ datetimeInput.addEventListener("change", function() {
 				</div>
 				<div class="modal-footer rounded-0">
 					<div class="text-end">
-						<button type="button" class="btn btn-danger btn-sm rounded-0" id="delete"
-							data-id="">Supprimer</button>
-						<button type="button" class="btn btn-secondary btn-sm rounded-0"
-							data-bs-dismiss="modal">Fermer</button>
+						<button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">Supprimer</button>
+						<button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Fermer</button>
 					</div>
 				</div>
 			</div>
@@ -223,8 +200,8 @@ datetimeInput.addEventListener("change", function() {
 	$schedules = $con->query("SELECT * FROM `schedule_list`");
 	$sched_res = [];
 	foreach ($schedules->fetch_all(MYSQLI_ASSOC) as $row) {
-		$row['sdate'] = date("d M Y H:i", strtotime($row['start_datetime']));
-		$row['edate'] = date("d M Y H:i", strtotime($row['end_datetime']));
+		$row['sdate'] = date("d M Y H", strtotime($row['start_datetime']));
+		$row['edate'] = date("d M Y H", strtotime($row['end_datetime']));
 
 		$sched_res[$row['id']] = $row;
 	}
@@ -234,7 +211,7 @@ datetimeInput.addEventListener("change", function() {
 	?>
 </body>
 <script>
-var scheds = $.parseJSON('<?= json_encode($sched_res) ?>')
+	var scheds = $.parseJSON('<?= json_encode($sched_res) ?>')
 </script>
 <script src="./js/script_reservation_salle.js"></script>
 
