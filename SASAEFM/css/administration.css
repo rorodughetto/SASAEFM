@@ -1,0 +1,126 @@
+/* Réinitialisation des styles de base du navigateur */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+      }
+
+/* Style pour la section de connexion */
+section {
+    margin-top: 10%;
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Titre de la section */
+h1 {
+margin-top: 5%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+/* Titre de la section */
+h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Étiquettes de formulaire */
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Champ de formulaire */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Bouton de soumission */
+input[type="submit"],
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Message d'erreur */
+p.Erreur {
+    color: #FF0000;
+    font-size: 14px;
+}
+/* Style pour le lien de retour */
+a[href="calendar.php"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+a[href="calendar.php"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* Styles pour l'en-tête */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centrez verticalement le contenu */
+    padding: 10px 20px; /* Espacement autour du contenu */
+    background-color: #fff; /* Couleur de fond blanche */
+    border-bottom: 1px solid #ccc; /* Bordure inférieure grise */
+}
+
+/* Styles pour le bouton de retour */
+.header button {
+    padding: 8px 16px;
+    background-color: #333; /* Couleur de fond sombre */
+    color: #fff; /* Couleur de texte claire */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+        margin-right: 10px; /* Marge à droite pour l'espace entre le bouton et le bouton de déconnexion */ /* Transition en douceur au survol */
+}
+
+.header button:hover {
+    background-color: #555; /* Couleur légèrement plus foncée au survol */
+}
+/* Styles pour le message de bienvenue */
+.welcome-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1952b4; /* Couleur bleu foncé */
+    margin-left: 10px;
+}
